@@ -1,59 +1,108 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
-html, body {
-  height: 100%;
+html{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    --lh: 1.4rem;
+    line-height: var(--lh);
 }
-.chat-box {
-  width: 100%;
-  height: 100%;
-  min-width: 570px;
-  max-width: 1270px;
-  padding: 10px 0;
+
+.card-container, .favorite-container{
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
 }
-.user-list {
-  height: 100%;
-  width: 270px;
-  min-width: 270px;
+
+.movie-card{
+    display: grid;
+    grid-template-columns: 30% 70%;
+    max-width: 600px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px #BFC6C9;
 }
-.user-list .circle {
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  border: 2px solid grey;
+.card-img{
+    border: none;
+    border-radius: 0;
+    width: 180px;
+    padding: 0;
+    margin: 0;
 }
-.user-list .online .circle {
-  background-color: green;
-  border-color: green;
+.card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 20px 15px 20px 30px; 
 }
-.user-list li{
-  background-color: #343a40;
+.card-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #6B7A81;
+    margin: 0;
 }
-.user-list li.active{
-  background-color: blue;
+.card-title h3{
+    font-size: 1.5rem;
+    margin: 0;
 }
-​.chat {
-  min-width: 300px;
-}
-.message-container{
-  padding: 15px;
-  border-bottom: 1px solid rgb(201, 199, 199);
-}
-.message-header{
-  margin-bottom: 7px;
-  max-width: 500px;
-  display: flex;
-  justify-content: space-between;
-}
-.message-name{
-  color: rgb(77, 77, 77);
-  font-weight: 500;
-}
-.message-date{
-  color: rgb(114, 114, 114);
-  font-weight: 100;
+
+.card-tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #3E474A;
 }
 
 
+.card-divider{
+    background: #3E474A;
+    width: 2px;
+}
 
+.card-description{
+    --max-lines: 3;
+    max-height: calc(var(--lh) * var(--max-lines));
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #6B7A81;
+}
+.card-buttons{
+    display: flex;
+    justify-content: space-between;
+}
 
+.card-trailer{
+    all: unset;
+    color: #5cbef9;
+    border: solid 2px #5cbef9;
+    border-radius: 5px;
+    padding: 6px 17px;
+    cursor:pointer;
+}
+.card-trailer:hover{
+    background-color: #5cbef9;
+    color: white;
+}
+
+.card-addFavorite{
+    text-decoration: none;
+    color: #8A969B;
+    padding: 6px 17px;
+}
+
+.youtube{
+    margin: auto;
+    margin-top: 150px;
+    width: 560px;
+    height: 315px;
+}
+
+.youtube-video{
+    width: 560px;
+    height: 315px;
+}

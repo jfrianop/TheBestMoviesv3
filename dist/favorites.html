@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>PeliApp - Películas</title>
+    <title>PeliApp - Favoritos</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/56db58c633.js" crossorigin="anonymous"></script>
 </head>
@@ -20,36 +20,16 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Películas <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="favorites.html">Favoritos</a>
+                <a class="nav-item nav-link" href="index.html">Películas </a>
+                <a class="nav-item nav-link active" href="#">Favoritos <span class="sr-only">(current)</span></a>
             </div>
         </div>
     </nav>
 
-    <!-- Pages Navbar -->
-    <nav class="my-2" aria-label="Navigation">
-        <ul class="pagination justify-content-center">
-            <li page-number="1" class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li page-number="2" class="page-item"><a class="page-link" href="#">2</a></li>
-            <li page-number="3" class="page-item"><a class="page-link" href="#">3</a></li>
-        </ul>
-    </nav>
-
     <!-- Movies List -->
-    <div class="card-container mx-auto d-flex"></div>
-
-    <!-- Pages Navbar -->
-    <nav class="my-2" aria-label="Navigation">
-        <ul class="pagination justify-content-center">
-            <li page-number="1" class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li page-number="2" class="page-item"><a class="page-link" href="#">2</a></li>
-            <li page-number="3" class="page-item"><a class="page-link" href="#">3</a></li>
-        </ul>
-    </nav>
+    <div class="favorite-container mx-auto d-flex"></div>
 
     <!-- Modal -->
-
-    </div>
     <div class="modal stop-yt" id="trailer-modal" tabindex="-1" role="dialog">
         <div class="youtube">
 
@@ -75,7 +55,6 @@
                 <p class="card-description">{{description}}</p>
                 <div class="card-buttons">
                     <button class="card-trailer" movie-id="{{id}}">Ver Trailer</button>
-                    <a href="favorites.html" class="card-addFavorite" movie-id="{{id}}">Agregar a favoritos <i class="fas fa-heart"></i></a>
                 </div>
             </div>
         </div>

@@ -24,5 +24,9 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({ template: path.join(__dirname, "index.html") }),
+    new HtmlWebpackPlugin({  // Also generate a test.html
+      filename: 'favorites.html',
+      template: path.join(__dirname, "favorites.html")
+    })
   ]
 };

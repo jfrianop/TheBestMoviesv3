@@ -2,62 +2,84 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PeliApp - Películas</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/56db58c633.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <div class="container-fluid h-100">
-    <div class="row justify-content-center h-100">
-      <div class="chat-box d-flex flex-row">
-        <div class="user-list bg-dark">
-          <ul class="list-group">
-          </ul>
-        </div>
-        <div class="chat flex-fill">
-          <div class="message-container">
-            <div class="message-header">
-              <div class="message-name">
-                Nombre
-              </div>
-              <div class="message-date">
-                Fecha
-              </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
+        <a class="navbar-brand" href="#">PeliApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Películas <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="favorites.html">Favoritos</a>
             </div>
-            <div class="message-content">
-              Abajo
+        </div>
+    </nav>
+
+    <!-- Pages Navbar -->
+    <nav class="my-2" aria-label="Navigation">
+        <ul class="pagination justify-content-center">
+            <li page-number="1" class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li page-number="2" class="page-item"><a class="page-link" href="#">2</a></li>
+            <li page-number="3" class="page-item"><a class="page-link" href="#">3</a></li>
+        </ul>
+    </nav>
+
+    <!-- Movies List -->
+    <div class="card-container mx-auto d-flex"></div>
+
+    <!-- Pages Navbar -->
+    <nav class="my-2" aria-label="Navigation">
+        <ul class="pagination justify-content-center">
+            <li page-number="1" class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li page-number="2" class="page-item"><a class="page-link" href="#">2</a></li>
+            <li page-number="3" class="page-item"><a class="page-link" href="#">3</a></li>
+        </ul>
+    </nav>
+
+    <!-- Modal -->
+
+    </div>
+    <div class="modal stop-yt" id="trailer-modal" tabindex="-1" role="dialog">
+        <div class="youtube">
+
+        </div>
+    </div>
+
+    <!-- Card Template -->
+    <script id="entry-template" type="text/x-handlebars-template">
+        <div class="movie-card">
+            <img src="{{imgCode}}" alt="Poster" class="card-img">
+            <div class="card-info">
+                <div class="card-title">
+                    <h3>{{title}}</h3>
+                    <h3>{{score}}</h3>
+                </div>
+                <div class="card-tags">
+                    <div class="card-time">{{duration}}</div>
+                    <div class="card-divider"></div>
+                    <div class="card-date">{{date}}</div>
+                    <div class="card-divider"></div>
+                    <div class="card-genre">{{genre}}</div>
+                </div>
+                <p class="card-description">{{description}}</p>
+                <div class="card-buttons">
+                    <button class="card-trailer" movie-id="{{id}}">Ver Trailer</button>
+                    <a href="favorites.html" class="card-addFavorite" movie-id="{{id}}">Agregar a favoritos <i class="fas fa-heart"></i></a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Handlebar User -->
-  <script id="user-template" type="text/x-handlebars-template">
-    <li user-id="{{id}}" class="{{status}} list-group-item d-flex flex-row text-white">
-      <div class="circle align-self-center mr-2"></div>
-      {{name}}
-    </li>
-  </script>
-
-  <!-- Handlebar Message -->
-  <script id="message-template" type="text/x-handlebars-template">
-    <div class="message-container">
-      <div class="message-header">
-        <div class="message-name">
-          {{name}}
-        </div>
-        <div class="message-date">
-          {{date}}
-        </div>
-      </div>
-      <div class="message-content">
-        {{body}}
-      </div>
-    </div>
-  </script>
+    </script>
 </body>
 
 </html>
